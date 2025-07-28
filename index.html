@@ -1,274 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MysticMS – Asian Minecraft Server</title>
-  <meta name="description" content="MysticMS is an Asian Minecraft server where you can practice, compete, and have fun with players from all around! Join our community now.">
-  <link rel="icon" href="https://i.postimg.cc/fyjZVSDV/mysticms-06.webp" type="image/webp">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MysticMS Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    /* Reset & Globals */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    html, body {
-      font-family: 'Segoe UI', 'Montserrat', Verdana, Geneva, Tahoma, sans-serif;
-      background: linear-gradient(135deg, #1a0142 0%, #6247aa 70%, #ffb7f8 100%);
-      min-height: 100vh;
-      overflow-x: hidden;
-      color: #fff;
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
-
     body {
-      animation: bgMove 20s ease-in-out alternate infinite;
-      position: relative;
-    }
-
-    @keyframes bgMove {
-      0% { background-position: 0 0; }
-      100% { background-position: 100vw 100vh; }
-    }
-
-    header {
+      background: url('https://i.postimg.cc/Vkd67fJK/c4d510f1ea08e57dd03310638fc9805c.jpg') no-repeat center center fixed;
+      background-size: cover;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 3rem 1rem 2rem 1rem;
-      background: rgba(18, 10, 44, 0.9);
-      box-shadow: 0 4px 60px 0 #31296199;
-      border-radius: 0 0 36px 36px;
-      animation: fadeInDown 1s 0.2s both;
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-60px);}
-      to   { opacity: 1; transform: translateY(0);}
-    }
-
-    .logo {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      box-shadow: 0 0 65px 3px #fff0fa66, 0 0 0 8px #1a014244;
-      margin-bottom: 15px;
-      transition: transform .25s;
-      background: #fff;
-      object-fit: cover;
-      animation: logoPop 1.4s cubic-bezier(.7,1.1,.7,-0.2) both;
-    }
-
-    @keyframes logoPop {
-      0% {transform: scale(0);}
-      90% {transform: scale(1.08);}
-      100% {transform: scale(1);}
-    }
-
-    h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      text-shadow: 0 2px 12px #b69eec99, 0 0 2px #000;
-      letter-spacing: 3px;
-      margin-bottom: 12px;
-      background: linear-gradient(90deg, #f5eeff 20%, #7658e3 70%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: fadeInDown 1s .4s both;
-    }
-
-    .subtitle {
-      font-size: 1.3rem;
-      font-weight: 400;
-      line-height: 1.6;
-      color: #ffd8f2;
-      text-align: center;
-      margin-bottom: 22px;
-      max-width: 540px;
-      animation: fadeInDown 1s .5s both;
-      letter-spacing: 1px;
-    }
-
-    .discord-link {
-      display: inline-block;
-      margin: 1.2rem auto 0 auto;
-      padding: 0.8em 2.1em;
-      background: linear-gradient(90deg,#3a1c71 0,#d76d77 60%,#ffaf7b 100%);
-      border-radius: 25px;
-      font-weight: bold;
+      min-height: 100vh;
       color: #fff;
-      letter-spacing: 1px;
-      font-size: 1.14rem;
-      box-shadow: 0 2px 30px #bd8cff47, 0 0 2px #fff8;
-      border: none;
-      outline: none;
-      text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s, background 0.25s;
-      position: relative;
-      animation: fadeInDown 1s .7s both;
-      cursor: pointer;
     }
-    .discord-link:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 40px #ffdbc68f;
-      background:linear-gradient(90deg,#6353e3, #aa4cc1, #ffab8f 100%);
-    }
-
-    main {
-      padding: 2.5rem 1rem 1rem 1rem;
-      min-height: 38vh;
+    .sidebar {
+      width: 240px;
+      background: rgba(0, 0, 0, 0.75);
+      padding: 2rem 1rem;
       display: flex;
       flex-direction: column;
+      gap: 20px;
+      backdrop-filter: blur(10px);
+    }
+    .sidebar h2 {
+      text-align: center;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .category {
+      display: flex;
       align-items: center;
-      justify-content: center;
-      animation: fadeIn 2s both;
+      gap: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.05);
+      cursor: pointer;
+      transition: 0.3s;
     }
-
-    @keyframes fadeIn {
-      from{opacity:0;}
-      to{opacity:1;}
+    .category:hover {
+      background-color: rgba(255, 255, 255, 0.15);
     }
-
-    .about-section {
-      background: rgba(40,20,80,0.77);
-      border-radius: 28px;
-      box-shadow: 0 4px 32px #221b4766;
-      padding: 2.5rem 2rem 1.5rem 2rem;
-      max-width: 480px;
-      margin: 0 auto 2.2rem auto;
-      backdrop-filter: blur(0.5px);
-      border: 1px solid #fff3;
+    .category img {
+      width: 30px;
+      height: 30px;
+      border-radius: 5px;
     }
-
-    .about-section p {
-      font-size: 1.17rem;
-      color: #f3d9ff;
-      text-shadow: 0 1px 4px #000c;
-      line-height: 1.8;
-      font-weight: 500;
-      text-align: center;
-      margin-bottom: 0;
+    .main-content {
+      flex: 1;
+      padding: 2rem;
+      overflow-y: auto;
     }
-
-    /* Owner section */
-    footer {
+    .header {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+    .product {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 1rem;
+      border-radius: 15px;
+      backdrop-filter: blur(5px);
+      transition: 0.3s;
+    }
+    .product:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    .product img {
       width: 100%;
-      text-align: center;
-      padding: 1.7rem 1rem 1.2rem 1rem;
-      font-size: 0.98rem;
-      color: #fdd;
-      background: rgba(30,8,55,0.75);
-      border-radius: 32px 32px 0 0;
-      letter-spacing: 0.2px;
-      box-shadow: 0 -2px 28px #e7c7dd2c;
-      animation: fadeInUp 1s 0.8s both;
-      position: relative;
-      z-index: 2;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
     }
-
-    @keyframes fadeInUp {
-      from{opacity:0; transform: translateY(64px);}
-      to{opacity:1; transform: translateY(0);}
+    .product h3 {
+      margin: 10px 0 5px;
+      font-weight: 500;
     }
-
-    /* Star/particles effect */
-    .particles {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      pointer-events: none;
-      z-index: 1;
+    .product p {
+      font-size: 0.9rem;
+      color: #ccc;
     }
-
-    /* Responsive */
-    @media (max-width: 600px){
-      h1 { font-size: 2.1rem; }
-      .logo { width: 80px; height: 80px; }
-      .about-section { padding: 1.1rem 0.8rem; max-width: 98vw;}
-      main {padding: 1.2rem;}
+    .buy-btn {
+      margin-top: 10px;
+      background-color: #007bff;
+      border: none;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .buy-btn:hover {
+      background-color: #005dc1;
+    }
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+      .sidebar {
+        flex-direction: row;
+        overflow-x: auto;
+        width: 100%;
+        padding: 1rem;
+      }
+      .category {
+        flex: 1 0 auto;
+        white-space: nowrap;
+      }
     }
   </style>
 </head>
 <body>
-  <canvas class="particles"></canvas>
-  <header>
-    <img src="https://i.postimg.cc/fyjZVSDV/mysticms-06.webp" alt="MysticMS Logo" class="logo" />
-    <h1>MysticMS</h1>
-    <div class="subtitle">
-      Asian Minecraft Practice & Competition<br>
-      Practice, compete, and have fun with players from all around!
+  <div class="sidebar">
+    <h2>MysticMS</h2>
+    <div class="category"><img src="https://i.postimg.cc/3xTBQqT5/604d700c7579f4616c76da9b14b50bee.jpg" />Ranks</div>
+    <div class="category"><img src="https://i.postimg.cc/sDXcjWBK/978ce5a9105bfc6e78780bdc02ae6a15.jpg" />Practice Kits</div>
+    <div class="category"><img src="https://i.postimg.cc/cHcLbr08/45cf7d913abb0756b490b2901eeab3e3.jpg" />Crate Keys</div>
+    <div class="category"><img src="https://i.postimg.cc/PrCdm6pD/e553eaca7de4b0b60fddd69dd8d04ac0.jpg" />Mystic Coins</div>
+    <div class="category"><img src="https://i.postimg.cc/3xTBQqT5/604d700c7579f4616c76da9b14b50bee.jpg" />Cosmetics</div>
+    <div class="category"><img src="https://i.postimg.cc/sDXcjWBK/978ce5a9105bfc6e78780bdc02ae6a15.jpg" />Special Offers</div>
+  </div>
+  <div class="main-content">
+    <div class="header">Welcome to MysticMS Store</div>
+    <div class="product-grid">
+      <div class="product">
+        <img src="https://i.postimg.cc/3xTBQqT5/604d700c7579f4616c76da9b14b50bee.jpg" alt="Mystic+ Rank" />
+        <h3>Mystic+ Rank</h3>
+        <p>Unlock exclusive perks & cosmetics</p>
+        <button class="buy-btn">Buy for ₹399</button>
+      </div>
+      <div class="product">
+        <img src="https://i.postimg.cc/sDXcjWBK/978ce5a9105bfc6e78780bdc02ae6a15.jpg" alt="Champion Kit" />
+        <h3>Champion Kit</h3>
+        <p>Perfect combo to dominate!</p>
+        <button class="buy-btn">Buy for ₹299</button>
+      </div>
+      <div class="product">
+        <img src="https://i.postimg.cc/cHcLbr08/45cf7d913abb0756b490b2901eeab3e3.jpg" alt="Elite Crate Key" />
+        <h3>Elite Crate Key ×5</h3>
+        <p>Try your luck with rewards!</p>
+        <button class="buy-btn">Buy for ₹149</button>
+      </div>
+      <div class="product">
+        <img src="https://i.postimg.cc/PrCdm6pD/e553eaca7de4b0b60fddd69dd8d04ac0.jpg" alt="Mystic Coins" />
+        <h3>16,000 Mystic Coins</h3>
+        <p>Use in-store & events</p>
+        <button class="buy-btn">Buy for ₹179</button>
+      </div>
+      <div class="product">
+        <img src="https://i.postimg.cc/3xTBQqT5/604d700c7579f4616c76da9b14b50bee.jpg" alt="Wings Cosmetic" />
+        <h3>Wings Cosmetic</h3>
+        <p>Fly in style. Cosmetic only!</p>
+        <button class="buy-btn">Buy for ₹99</button>
+      </div>
     </div>
-    <a class="discord-link" href="https://discord.gg/3SnXXg7Qd9" target="_blank" rel="noopener">
-      Join our Discord 🚀
-    </a>
-  </header>
-
-  <main>
-    <section class="about-section">
-      <p>
-        Welcome to MysticMS!<br>
-        Experience a next-level Minecraft server dedicated to the Asian community.
-        Whether you want to practice your skills, compete in exciting events, or just have fun with friends and new players, MysticMS is the place for you!
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    Owned by <b style="color: #ffd8f2;">i2rqx</b> &mdash; MysticMS<br>
-    &copy; 2025 MysticMS. All rights reserved.
-  </footer>
-
-  <script>
-    // Fancy background particles (star glints)
-    const canvas = document.querySelector('.particles');
-    const ctx = canvas.getContext('2d');
-    let w = canvas.width = window.innerWidth;
-    let h = canvas.height = window.innerHeight;
-    let particles = [];
-    function resizeCanvas() {
-      w = canvas.width = window.innerWidth;
-      h = canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resizeCanvas);
-
-    function createParticles(count) {
-      particles = [];
-      for(let i = 0; i < count; i++){
-        particles.push({
-          x: Math.random() * w,
-          y: Math.random() * h,
-          r: Math.random() * 1.2 + 0.7,
-          alpha: Math.random() * 0.7 + 0.2,
-          dx: (Math.random() - 0.5) * 0.08,
-          dy: (Math.random() - 0.5) * 0.08
-        });
-      }
-    }
-    function animateParticles(){
-      ctx.clearRect(0,0,w,h);
-      for(const p of particles){
-        p.x += p.dx;
-        p.y += p.dy;
-        // Wrap
-        if(p.x < 0) p.x = w; if(p.x > w) p.x = 0;
-        if(p.y < 0) p.y = h; if(p.y > h) p.y = 0;
-        ctx.save();
-        ctx.globalAlpha = p.alpha;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, 2*Math.PI);
-        ctx.fillStyle = "#fff9ff";
-        ctx.shadowColor = "#edc1ff";
-        ctx.shadowBlur = 8;
-        ctx.fill();
-        ctx.restore();
-      }
-      requestAnimationFrame(animateParticles);
-    }
-    createParticles(56);
-    animateParticles();
-
-    // Smooth fade on navigation (optional, works if site is extended)
-    document.addEventListener('DOMContentLoaded', () => {
-      document.body.style.opacity = 0;
-      setTimeout(() => {document.body.style.transition = 'opacity 1s';document.body.style.opacity = 1;}, 20);
-    });
-  </script>
+  </div>
 </body>
 </html>
